@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        height: 100vh;
+        perspective: 1000px;
+    }
+    .scene{
+        width: 210px;
+        height: 210px;
+    }
+    .cube{
+        position: relative;
+        transform-style: preserve-3d;
+        width: 100%;
+        height: 100%;
+        transform: rotateX(-25deg) rotateY(45deg);
+        animation: rotateCube 3s infinite linear;
+    }
+    .side{
+        position: absolute;
+        background-color: black;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        width: 210px;
+        height: 210px;
+        padding: 2px;
+        gap: 2px;
+    }
+    .side div{
+        border-radius: 5px;
+    }
+    .top{
+        transform: rotateX(90deg) translateZ(105px);
+    }
+    .top div{
+        background-color: white;
+    }
+    .bottom{
+        transform: rotateX(-90deg) translateZ(105px);
+    }
+    .bottom div{
+        background-color: yellow;
+    }
+    .right{
+        transform: rotateY(90deg) translateZ(105px);
+    }
+    .right div{
+        background-color: blue;
+    }
+    .left{
+        transform: rotateY(-90deg) translateZ(105px);
+    }
+    .left div{
+        background-color: green;
+    }
+    .front{
+        transform: rotateX(0deg) translateZ(105px);
+    }
+    .front div{
+        background-color: red;
+    }
+    .back{
+        transform: rotateX(180deg) translateZ(105px);
+    }
+    .back div{
+        background-color: orange;
+    }
+
+    @keyframes rotateCube {
+        0% {transform: rotateX(-25deg) rotateY(45deg);}
+        100% {transform: rotateX(-25deg) rotateY(405deg);}
+    }
+</style>
+<body>
+    <div class="scene">
+        <div class="cube">
+            <div class="side front"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="side back"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="side right"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="side left"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="side top"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="side bottom"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+</body>
+</html>
